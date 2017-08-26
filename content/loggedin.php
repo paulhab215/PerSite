@@ -8,7 +8,7 @@ if (!isset($_SESSION['agent']) OR ($_SESSION['agent'] != md5($_SERVER['HTTP_USER
 	redirect_user();	
 }
 
-// Set the page title and include the HTML header:
+// Set the page title and header
 $page_name = 'Logged In!';
 include ('includes/header.html');
 
