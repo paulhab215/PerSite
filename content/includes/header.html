@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title><?php echo $page_title; ?></title>	
+	<title><?php echo $page_name; ?></title>	
 	<link rel="stylesheet" href="includes/style1.css" type="text/css" media="screen" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -19,38 +19,27 @@
 	 var id = $(this).data('id');
 	 $(id).fadeOut();   
 	});
-
-
-
-
   </script>
   <style>
   label {
     display: inline-block;
     width: 5em;
   }
-
-
   </style>
-
-
     <style type="text/css"> .map_canvas img { max-width: none; } </style>
 </head>
 <body>
-
-
-	<div id="header">
-		<h1>Paul</h1>
-		<h2>Habjanetz</h2>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="loggedin.php">Home</a></li>
-			<li><a href="current_work.php">Current Work</a></li>
-			<li><a href="about_me.php">More About Me</a></li>
-			<li><a href="password.php">Change your password</a></li>
-			<li><a href="logout.php">Logout</a></li>
-	  	</ul>
-	</div>
-    <div id="content">
-	<!-- Page content below. -->
+<div id="header">
+	<h1>Paul</h1>
+	<h2>Habjanetz</h2>
+</div>
+<div id="navigation">
+	<ul>
+		<li><a href="loggedin.php">Home</a></li>
+		<li><a href="current_work.php">Current Work</a></li>
+		<li><a href="about_me.php">More About Me</a></li>
+		<li><a href="password.php">Change your password</a></li>
+		<li><a href="logout.php">Logout</a></li>
+  	</ul>
+</div>
+<div id="content">

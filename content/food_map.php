@@ -1,5 +1,5 @@
-<?php # Script 3.4 - index.php
-$page_title = 'Favorite foods!';
+<?php #Map of my favorite places to eat
+$page_name = 'Favorite foods!';
 session_start(); // Access the existing session.
 include ('includes/header.html');
 ?>  
@@ -96,7 +96,7 @@ include ('includes/header.html');
           //$( '[src="http://maps.gstatic.com/mapfiles/mv/imgs8.png"]' ).hide();
       });
 
-      // trying to close the winddow on click
+      // trying to close the window on click
       google.maps.event.addListener(infoWindow, 'closeclick', function(){       
           clicked = false;
       });
