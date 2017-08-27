@@ -13,10 +13,10 @@
     $( document ).tooltip();
   } );
 	$(document).on("mouseover", ".popup", function() {
-	 var id = $(this).data('userid');
+	 var id = $(this).data('user_id');
 	 $(id).fadeIn();
 	}).on('mouseout', '.popup', function() {
-	 var id = $(this).data('userid');
+	 var id = $(this).data('user_id');
 	 $(id).fadeOut();   
 	});
   </script>
