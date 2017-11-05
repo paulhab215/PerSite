@@ -43,7 +43,7 @@ myApp.controller('registerController', ['$scope', '$log', function($scope, $log)
     
 }]);
 
-myApp.controller('loginController', ['$scope', '$log', '$http', function($scope, $log,$http) {
+myApp.controller('loginController', ['$scope', '$log', '$http','$location', function($scope, $log,$http,$location) {
     
     $scope.login;
 
@@ -54,6 +54,11 @@ myApp.controller('loginController', ['$scope', '$log', '$http', function($scope,
               data: { username : $scope.user_name, pass: $scope.pass_main }
           }).then(function (response) {// on success
             console.log(response);
+            if(response.data == "success"){
+              $location.path( "/register" );
+            }else{
+                $scope.login.error = response.data;
+            }
 
           }, function (response) {
                console.log(response.data,response.status);
