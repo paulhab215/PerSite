@@ -4,14 +4,11 @@
 			<span>Login</span>
 		</a>
 		<div class="permahover">
-			<div class="loginwrapper">'+ SubmitErrors +' 
-				<form class="login" method="post"><input type="hidden" name="login" value="login" />
-					<input type="text" placeholder="Username" maxlength="20" name="user_name" autofocus /> <i class="fa fa-user"></i> 
-					<input type="password" name="pass_main" placeholder="Password" maxlength="40" /> <i class="fa fa-key"></i> 
+			<div class="loginwrapper"> {{ login.error }}
+				<form class="login"><input type="hidden" name="login" value="login" />
+					<input type="text" placeholder="Username" maxlength="20" ng-model="user_name" autofocus /> <i class="fa fa-user"></i> 
+					<input type="password" ng-model="pass_main" placeholder="Password" maxlength="40" /> <i class="fa fa-key"></i> 
 					<a id="forgotpass" href="#">Forgot your password?</a>
-<!-- 			        <input type="button" value="Add" >
- -->
-
 					<button ng-click="checkCred()">
 						<i class="spinner"></i> 
 						<span class="state" >Check Credintials</span>

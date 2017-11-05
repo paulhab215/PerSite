@@ -45,15 +45,16 @@ myApp.controller('registerController', ['$scope', '$log', function($scope, $log)
 
 myApp.controller('loginController', ['$scope', '$log', '$http', function($scope, $log,$http) {
     
+    $scope.login;
 
     $scope.checkCred = function() {
           $http({
                method: 'POST',
                url:  'get.php',
-              data: { recordId : id }
+              data: { username : $scope.user_name, pass: $scope.pass_main }
           }).then(function (response) {// on success
-            alert("made into correct one");
-            
+            console.log(response);
+
           }, function (response) {
                console.log(response.data,response.status);
                

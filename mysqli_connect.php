@@ -1,7 +1,7 @@
 <?php # Database Access - establishes connection wile setting encoding
 
 // Set the database access information as constants:
-DEFINE ('DB_USER', '');
+DEFINE ('DB_USER', 'root');
 DEFINE ('DB_PASSWORD', '');
 DEFINE ('DB_HOST', 'localhost');
 DEFINE ('DB_NAME', 'sitename');
