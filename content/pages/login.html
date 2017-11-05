@@ -1,0 +1,30 @@
+<ul class="mh-menu">
+	<li>
+		<a href="#/login">
+			<span>Login</span>
+		</a>
+		<div class="permahover">
+			<div class="loginwrapper">'+ SubmitErrors +' 
+				<form class="login" method="post"><input type="hidden" name="login" value="login" />
+					<input type="text" placeholder="Username" maxlength="20" name="user_name" autofocus value="<?php if (isset($_POST['user_name'])) echo $_POST['user_name']; ?>"/> <i class="fa fa-user"></i> 
+					<input type="password" name="pass_main" placeholder="Password" maxlength="40" value="<?php if (isset($_POST['pass_main'])) echo $_POST['pass_main']; ?>" /> <i class="fa fa-key"></i> 
+					<a id="forgotpass" href="#">Forgot your password?</a>
+					<button>
+						<i class="spinner"></i> 
+						<span class="state">Check Credintials</span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</li>
+	<li>
+		<a href="#/register">
+			<span>Create Account</span>
+		</a>
+	</li>
+	<li>
+		<a id="earnspan">
+			<span>Earn Your Way</span>
+		</a>
+	</li>
+</ul>

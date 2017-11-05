@@ -1,0 +1,32 @@
+<ul class="mh-menu">
+	<li>
+		<a href="#/login">
+			<span>Login</span>
+		</a>
+	</li>
+	<li>
+		<a href="#/register">
+			<span>Create Account</span>
+		</a>
+		<div class="permahover">
+			<div class="loginwrapper">'+ SubmitErrors +'
+				<form class="login" method="post">
+					<input type="hidden" name="register" value="register"/>
+					<input type="text" name="user_name" placeholder="Username" autofocus maxlength="20" value="<?php if (isset($_POST['user_name'])) echo $_POST['user_name']; ?>" /><i class="fa fa-user"></i>
+					<input type="text" name="first_name" placeholder="First Name" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" /><i class="fa fa-user"></i>
+					<input type="password" name="pass_main1" placeholder="Password" maxlength="40" value="<?php if (isset($_POST['pass_main1'])) echo $_POST['pass_main1']; ?>" /><i class="fa fa-key"></i>
+					<input type="password" name="pass_main2" placeholder="Confirm Password" maxlength="40" value="<?php if (isset($_POST['pass_main2'])) echo $_POST['pass_main2']; ?>" /><i class="fa fa-key"></i>
+					<input type="password" name="prov_key" placeholder="Provided Key" maxlength="40" value="<?php if (isset($_POST['prov_key'])) echo $_POST['prov_key']; ?>" /><i class="fa fa-key"></i>
+					<a id="forgotpass" href="#">Don\'t have a key?</a>
+					<button><i class="spinner"></i>
+						<span class="state">Launch Creation</span>
+					</button></form>
+			</div>
+		</div>
+	</li>
+	<li>
+		<a id="earnspan">
+			<span>Earn Your Way</span>
+		</a>
+	</li>
+</ul>

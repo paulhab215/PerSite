@@ -12,10 +12,17 @@ myApp.config(function ($routeProvider) {
         controller: 'mainController'
     })
     //fragment identifier specified
-    .when('/second', {
-        templateUrl: 'pages/second.html',
-        controller: 'secondController'
+    .when('/login', {
+        templateUrl: 'pages/login.html',
+        controller: 'loginController'
     })
+
+    //fragment identifier specified
+    .when('/register', {
+        templateUrl: 'pages/register.html',
+        controller: 'registerController'
+    })
+
     // This is what makes single page
 });
 
@@ -25,8 +32,14 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
     
 }]);
 
-myApp.controller('secondController', ['$scope', '$log', function($scope, $log) {
+myApp.controller('registerController', ['$scope', '$log', function($scope, $log) {
     
-    $scope.name = 'Secondary';
+    $scope.name = 'registerary';
+    
+}]);
+
+myApp.controller('loginController', ['$scope', '$log', function($scope, $log) {
+    
+    $scope.name = 'loginary';
     
 }]);
