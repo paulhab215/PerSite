@@ -29,6 +29,10 @@ body {
 	font:0.8em Arial, Helvetica, "bitstream vera sans", sans-serif;
 }
 
+/* container */
+#container {
+width:100%;
+}
 
 /* header */
 #header {
@@ -131,7 +135,7 @@ body {
 
 /* content */
 #content {
-	padding:0 20px 20px 185px;
+	padding:0;
 	height:auto;
 	margin:0 auto;
 }
@@ -269,7 +273,6 @@ h1.contentHeader {
 }
 
 .mh-menu{
-    margin: 20px auto;
     position: relative;
 }
 .mh-menu li{
