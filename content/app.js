@@ -1,5 +1,5 @@
 //simple single page application
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize']);
 
 //pass into myapp config unique routes
 myApp.config(function ($routeProvider) {
@@ -43,7 +43,7 @@ myApp.controller('registerController', ['$scope', '$log', function($scope, $log)
     
 }]);
 
-myApp.controller('loginController', ['$scope', '$log', '$http','$location', function($scope, $log,$http,$location) {
+myApp.controller('loginController', ['$scope', '$log', '$http','$location','$sce', function($scope, $log,$http,$location,$sce) {
     
     $scope.login;
 
@@ -53,14 +53,16 @@ myApp.controller('loginController', ['$scope', '$log', '$http','$location', func
                url:  'get.php',
               data: { username : $scope.user_name, pass: $scope.pass_main }
           }).then(function (response) {// on success
-            console.log(response);
             if(response.data == "success"){
               $location.path( "/register" );
             }else{
-                $scope.login.error = response.data;
+            console.log(response.data);
+                $scope.loginerrors = $sce.trustAsHtml(response.data);
             }
 
           }, function (response) {
+                          alert("s");
+
                console.log(response.data,response.status);
                
           });

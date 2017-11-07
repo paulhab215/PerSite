@@ -24,6 +24,7 @@ $SubmitType = "";
 	    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" /> 
         <script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
         <script src="//code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
+		<script src="//code.angularjs.org/1.3.0-rc.1/angular-sanitize.min.js"></script>
         <script src="app.js"></script>   
 	 	<link rel="stylesheet" href="includes/style1.css" type="text/css" media="screen" />   
 <!-- 	  <style type="text/css"> .map_canvas img { max-width: none; } </style>

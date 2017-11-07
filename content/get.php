@@ -7,11 +7,13 @@ $postdata = file_get_contents("php://input");
 if(isset($postdata) && !empty($postdata))
 {
     $request   = json_decode($postdata);
+
     $username  = preg_replace('/[^a-zA-Z ]/','',$request->username);
     $pass 	   = preg_replace('/[^0-9 ]/','',$request->pass);
 
 	// Check login
 	list ($check, $data) = login_errors($dbc, $username, $pass);
+	error_log("1", 3, "errors.txt");
 
 	if ($check) { // success
 
@@ -50,7 +52,6 @@ if(isset($postdata) && !empty($postdata))
 function login_errors($dbc, $username = '', $pass = '') {
 
 	$errors = array(); 
-	error_log("inside login!", 3, "errors.txt");
 
 	// Validate username:
 	if (empty($username)) {
@@ -67,7 +68,6 @@ function login_errors($dbc, $username = '', $pass = '') {
 	}
 
 	if (empty($errors)) { 
-	error_log("inside empty!", 3, "errors.txt");
 
 		// Retrieve the user_id and first_name for that username/password combination:
 		$q = "SELECT first_name FROM users WHERE email='$username' AND pass=SHA1('$pass')";		
