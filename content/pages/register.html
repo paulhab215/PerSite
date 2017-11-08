@@ -9,7 +9,7 @@
 			<span>Create Account</span>
 		</a>
 		<div class="permahover">
-			<div class="loginwrapper">'+ SubmitErrors +'
+			<div ng-class="{'loginwrapper': loginerrors == null, 'loginwrappererrors': loginerrors != null }"> 
 				<form class="login" method="post">
 					<input type="hidden" name="register" value="register"/>
 					<input type="text" name="user_name" placeholder="Username" autofocus maxlength="20" /><i class="fa fa-user"></i>
@@ -18,9 +18,7 @@
 					<input type="password" name="pass_main2" placeholder="Confirm Password" maxlength="40" /><i class="fa fa-key"></i>
 					<input type="password" name="prov_key" placeholder="Provided Key" maxlength="40" /><i class="fa fa-key"></i>
 					<a id="forgotpass" href="#">Don\'t have a key?</a>
-					<button><i class="spinner"></i>
-						<span class="state">Launch Creation</span>
-					</button></form>
+					<button type="button" class="btn btn-primary btn-block buttonformat" ng-click="checkCred()">Launch Creation</button>
 			</div>
 		</div>
 	</li>
