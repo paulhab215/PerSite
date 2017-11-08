@@ -29,7 +29,7 @@ if(isset($postdata) && !empty($postdata))
 
 		// Print error messages
 		if (isset($errors) && !empty($errors)) {
-			$Errorlisting = '<span class="glyphicon glyphicon-hand-right"></span><strong>&nbspError Message:</strong><hr class="message-inner-separator"><p>';
+			$Errorlisting = '<span class="glyphicon glyphicon-hand-right"></span><strong>&nbsp;&nbsp;Error Message:</strong><hr class="message-inner-separator"><p>';
 			foreach ($errors as $msg) {
 				$Errorlisting .=  " - ";
 				$Errorlisting .=  "$msg";
