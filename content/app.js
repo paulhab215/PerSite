@@ -56,13 +56,9 @@ myApp.controller('loginController', ['$scope', '$log', '$http','$location','$sce
             if(response.data == "success"){
               $location.path( "/register" );
             }else{
-            console.log(response.data);
                 $scope.loginerrors = $sce.trustAsHtml(response.data);
             }
-
           }, function (response) {
-                          alert("s");
-
                console.log(response.data,response.status);
                
           });

@@ -8,12 +8,8 @@ if(isset($postdata) && !empty($postdata))
 {
     $request   = json_decode($postdata);
 
-    $username  = preg_replace('/[^a-zA-Z ]/','',$request->username);
-    $pass 	   = preg_replace('/[^0-9 ]/','',$request->pass);
-
 	// Check login
-	list ($check, $data) = login_errors($dbc, $username, $pass);
-	error_log("1", 3, "errors.txt");
+	list ($check, $data) = login_errors($dbc, $request);
 
 	if ($check) { // success
 
@@ -33,15 +29,15 @@ if(isset($postdata) && !empty($postdata))
 
 		// Print error messages
 		if (isset($errors) && !empty($errors)) {
-			$Errorlisting = '<h2>Error!</h2><br/><p class=\"error\">';
+			$Errorlisting = '<span class="glyphicon glyphicon-hand-right"></span><strong>&nbspError Message:</strong><hr class="message-inner-separator"><p>';
 			foreach ($errors as $msg) {
 				$Errorlisting .=  " - ";
 				$Errorlisting .=  "$msg";
 				$Errorlisting .= "<br/>";
 			}
-			$Errorlisting .= '<br/><br/>';
+			$Errorlisting .= '</p>';
 		}
-		echo json_encode($Errorlisting);
+		echo $Errorlisting;
 
 	}
 		
@@ -49,19 +45,19 @@ if(isset($postdata) && !empty($postdata))
 }
 
 /* validates form data ( email and password). */
-function login_errors($dbc, $username = '', $pass = '') {
+function login_errors($dbc, $request = '') {
 
 	$errors = array(); 
 
 	// Validate username:
-	if (empty($username)) {
+	if (empty($request->username)) {
 		$errors[] = 'You must input a user name';
 	} else {
 		$username = mysqli_real_escape_string($dbc, trim($username));
 	}
 
 	// Validate password:
-	if (empty($pass)) {
+	if (empty($request->pass)) {
 		$errors[] = 'You must enter a password';
 	} else {
 		$pass = mysqli_real_escape_string($dbc, trim($pass));

@@ -5,15 +5,15 @@
 		</a>
 		<div class="permahover">
 			<div class="loginwrapper"> 
-				<div ng-bind-html="loginerrors"></div>
 				<form class="login"><input type="hidden" name="login" value="login" />
+				<div class="alert alert-danger errorformat" ng-hide="loginerrors == null">
+					<div ng-bind-html="loginerrors"></div>
+				</div>
+					
 					<input type="text" placeholder="Username" maxlength="20" ng-model="user_name" autofocus /> <i class="fa fa-user"></i> 
 					<input type="password" ng-model="pass_main" placeholder="Password" maxlength="40" /> <i class="fa fa-key"></i> 
 					<a id="forgotpass" href="#">Forgot your password?</a>
-					<button ng-click="checkCred()">
-						<i class="spinner"></i> 
-						<span class="state" >Check Credintials</span>
-					</button>
+					<button type="button" class="btn btn-primary btn-block buttonformat" ng-click="checkCred()">Check Credintials</button>
 				</form>
 			</div>
 		</div>
