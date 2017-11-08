@@ -53,14 +53,14 @@ function login_errors($dbc, $request = '') {
 	if (empty($request->username)) {
 		$errors[] = 'You must input a user name';
 	} else {
-		$username = mysqli_real_escape_string($dbc, trim($username));
+		$username = mysqli_real_escape_string($dbc, trim($request->username));
 	}
 
 	// Validate password:
 	if (empty($request->pass)) {
 		$errors[] = 'You must enter a password';
 	} else {
-		$pass = mysqli_real_escape_string($dbc, trim($pass));
+		$pass = mysqli_real_escape_string($dbc, trim($request->pass));
 	}
 
 	if (empty($errors)) { 

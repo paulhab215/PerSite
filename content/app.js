@@ -47,7 +47,7 @@ myApp.controller('loginController', ['$scope', '$log', '$http','$location','$sce
     
     $scope.login;
 
-    $scope.checkCred = function() {
+    $scope.checkCred = function($window) {
           $http({
                method: 'POST',
                url:  'get.php',
@@ -57,6 +57,7 @@ myApp.controller('loginController', ['$scope', '$log', '$http','$location','$sce
               $location.path( "/register" );
             }else{
                 $scope.loginerrors = $sce.trustAsHtml(response.data);
+                document.getElementById("user_name").focus();
             }
           }, function (response) {
                console.log(response.data,response.status);
